@@ -19,8 +19,8 @@ args = parser.parse_args()
 
 ###### Initialization code - we only need to run this once and keep in memory.
 sess = tf.Session()
-saver = tf.train.import_meta_graph('saved_model/model_epoch5.ckpt.meta')
-saver.restore(sess, tf.train.latest_checkpoint('saved_model/'))
+saver = tf.train.import_meta_graph('/home/ubuntu/seefood/saved_model/model_epoch5.ckpt.meta')
+saver.restore(sess, tf.train.latest_checkpoint('/home/ubuntu/seefood/saved_model/'))
 graph = tf.get_default_graph()
 x_input = graph.get_tensor_by_name('Input_xn/Placeholder:0')
 keep_prob = graph.get_tensor_by_name('Placeholder:0')
